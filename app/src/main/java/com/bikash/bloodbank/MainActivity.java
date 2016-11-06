@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Connecting to the database
         database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("doners");
+        DatabaseReference myRef = database.getReference("donors");
 
 
 
