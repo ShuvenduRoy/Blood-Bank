@@ -55,7 +55,7 @@ public class DonorForm extends AppCompatActivity {
 
                 Donor donor = new Donor(name,mobile,group,city);
                 DatabaseReference myRef = database.getReference("donors");
-                myRef.child(city).push().setValue(donor);
+                myRef.child(city).child(group).push().setValue(donor);
             }
         });
 
