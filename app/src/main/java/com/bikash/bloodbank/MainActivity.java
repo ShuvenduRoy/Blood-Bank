@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button buttonDonor;
     Button buttonInfo;
+    Button needBlood;
     public static String donorId="no";
     SharedPreferences sharedPreferences;
 
@@ -47,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Info.class));
+            }
+        });
+
+        needBlood = (Button) findViewById(R.id.btn_need_blood);
+        needBlood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, NeedBlood.class));
             }
         });
 

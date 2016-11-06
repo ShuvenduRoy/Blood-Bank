@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.bikash.bloodbank.DonorForm">
+    tools:context="com.bikash.bloodbank.NeedBlood">
 
     <LinearLayout
         android:layout_marginTop="20dp"
@@ -19,7 +19,7 @@
 
         <TextView
             android:textColor="@color/White"
-            android:text="Donor Information"
+            android:text="Information"
             android:textSize="40dp"
             android:textAlignment="center"
             android:layout_width="wrap_content"
@@ -34,30 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_margin="5dp"
-            android:layout_marginLeft="20dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <TextView
-                android:textColor="@color/White"
-                android:text="Full Name"
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:background="@drawable/input_background"
-                android:padding="5dp"
-                android:id="@+id/edt_name"
-                android:hint="Bikash"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_margin="5dp"
@@ -77,7 +54,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:id="@+id/dropdownCity" />
+                android:id="@+id/needBlood" />
 
 
         </LinearLayout>
@@ -101,34 +78,11 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:id="@+id/dropdownGroup" />
+                android:id="@+id/needCity" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_margin="5dp"
-            android:layout_marginLeft="20dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <TextView
-                android:textColor="@color/White"
-                android:text="Mobile Number"
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:background="@drawable/input_background"
-                android:padding="5dp"
-                android:id="@+id/edt_mobileNumber"
-                android:hint="01xxxxxxxxx"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
 
 
         <LinearLayout
@@ -143,7 +97,7 @@
             <Button
                 android:background="@drawable/button_background"
                 android:textColor="@color/colorPrimary"
-                android:id="@+id/btn_saveDonor"
+                android:id="@+id/startSearch"
                 android:text="Continue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -154,6 +108,17 @@
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:id="@+id/developer_fb"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
 
 
 

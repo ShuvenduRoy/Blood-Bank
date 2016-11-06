@@ -16,7 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".DonorForm" />
-        <activity android:name=".Info"></activity>
+        <activity android:name=".Info" />
+        <activity android:name=".NeedBlood" />
+        <activity android:name=".DonorList"></activity>
     </application>
 
 </manifest>
