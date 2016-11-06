@@ -10,6 +10,10 @@ public class Donor {
     String city;
     String bloodGroup;
 
+    public Donor() {
+
+    }
+
     public Donor(String name, String contuctNumber, String bloodGroup, String city) {
         this.name = name;
         this.contuctNumber = contuctNumber;

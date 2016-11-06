@@ -28,17 +28,17 @@ public class DonorList extends AppCompatActivity {
         setContentView(R.layout.activity_donor_list);
 
         Bundle extras = getIntent().getExtras();
+        city = extras.getString("city");
+        group = extras.getString("group");
+        Log.i("NAME",city);
+        Log.i("NAME",group);
+
+        donorList = new ArrayList<>();
         listView = (ListView) findViewById(R.id.list_donor);
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, donorList);
         listView.setAdapter(arrayAdapter);
 
 
-        city = extras.getString("city");
-        group = extras.getString("group");
-        donorList = new ArrayList<>();
-
-        Log.i("NAME",city);
-        Log.i("NAME",group);
 
 
         DatabaseReference myRef = database.getReference("donors");
@@ -46,7 +46,7 @@ public class DonorList extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Donor donor = dataSnapshot.getValue(Donor.class);
-                String donorInfo = donor.name + "\n" + donor.contuctNumber;
+                String donorInfo = donor.name + '\n' + donor.contuctNumber;
                 donorList.add(donorInfo);
                 arrayAdapter.notifyDataSetChanged();
             }
