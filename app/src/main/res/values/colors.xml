@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009999</color>
+    <color name="colorPrimaryDark">#117cc9</color>
+    <color name="lightSky">#0e96f9</color>
+    <color name="colorAccent">#FFcb2b</color>
+    <color name="Black">#000000</color>
+    <color name="primary_color">#4A312A</color>
+    <color name="primary_dark_color">#2F1D1A</color><!-- Background color for app -->
+    <color name="tan_background">#FFF7DA</color><!-- Background color for the numbers category -->
+    <color name="category_numbers">#FD8E09</color><!-- Background color for the family members category -->
+    <color name="category_family">#379237</color><!-- Background color for the colors category -->
+    <color name="category_colors">#8800A0</color><!-- Background color for the phrases category -->
+    <color name="category_phrases">#00cc00</color>
+    <color name="skyBlue">#16AFCA</color>
+
+    <color name="LinkedInBlue">#0077B5</color>
+    <color name="FBBlue">#3B5998</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="lightGreen">#00cc00</color>
+    <color name="red">#AA0000</color>
+    <color name="green">#379237</color>
+    <color name="Purple">#8800A0</color>
+    <color name="White">#ffffff</color>
+    <color name="orange">#FD8E09</color>
+</resources>
