@@ -8,12 +8,12 @@ public class Donor {
     String name;
     String contuctNumber;
     String city;
-    String address;
+    String bloodGroup;
 
-    public Donor(String name, String contuctNumber, String address, String city) {
+    public Donor(String name, String contuctNumber, String bloodGroup, String city) {
         this.name = name;
         this.contuctNumber = contuctNumber;
-        this.address = address;
+        this.bloodGroup = bloodGroup;
         this.city = city;
     }
 
@@ -41,11 +41,11 @@ public class Donor {
         this.city = city;
     }
 
-    public String getAddress() {
-        return address;
+    public String getBloodGroup() {
+        return bloodGroup;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setBloodGroup(String bloodGroup) {
+        this.bloodGroup = bloodGroup;
     }
 }
