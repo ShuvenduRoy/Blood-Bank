@@ -26,6 +26,8 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
+
+
     <LinearLayout
         android:layout_marginTop="100dp"
         android:orientation="vertical"
@@ -71,14 +73,12 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
-            <EditText
-                android:background="@drawable/input_background"
-                android:padding="5dp"
-                android:id="@+id/InstituteSelectorEditText"
-                android:hint="Khulna"
-                android:layout_weight="1"
+            <Spinner
                 android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/dropdownCity" />
+
 
         </LinearLayout>
 
@@ -96,14 +96,11 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
-            <EditText
-                android:background="@drawable/input_background"
-                android:padding="5dp"
-                android:id="@+id/DeparementSelectorEditText"
-                android:hint="O+"
-                android:layout_weight="1"
+            <Spinner
                 android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/dropdownGroup" />
 
         </LinearLayout>
 
