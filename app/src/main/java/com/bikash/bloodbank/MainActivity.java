@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button buttonDonor;
     Button buttonInfo;
-    public static String donorId;
+    public static String donorId="no";
     SharedPreferences sharedPreferences;
 
     @Override
@@ -27,12 +27,17 @@ public class MainActivity extends AppCompatActivity {
         // Connecting to the database
         database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("donors");
+        myRef.setValue("Bikash");
 
         /**
          * Initializing variable
          */
-        donorId = sharedPreferences.getString("id","no");
+        try{
+            donorId = sharedPreferences.getString("id","no");
 
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
         /**
          * Wiring up every thing
