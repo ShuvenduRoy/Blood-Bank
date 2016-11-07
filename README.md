@@ -28,8 +28,11 @@ And finally he will get a list of donors as follow
 
 You can also learn about why you should donote blood, and why it is beneficial for you to donote. And ofcourse you may need blood any time you don't know. So, stay connected with the community.
 
-<br/>
+
 Thank you<br/>
+
+<br/>
+Developers<br/>
 Shuvendy Roy Bikash<br/>
 cse, kuet<br/>
 <br/>
