@@ -21,6 +21,7 @@ public class DonorList extends AppCompatActivity {
     ArrayList<String> donorList;
     ListView listView;
     ArrayAdapter<String> arrayAdapter;
+    public static ArrayList<Donor> donorInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class DonorList extends AppCompatActivity {
         Log.i("NAME",group);
 
         donorList = new ArrayList<>();
+        donorInfo = new ArrayList<>();
         listView = (ListView) findViewById(R.id.list_donor);
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, donorList);
         listView.setAdapter(arrayAdapter);
@@ -46,6 +48,7 @@ public class DonorList extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Donor donor = dataSnapshot.getValue(Donor.class);
+                donorInfo.add(donor);
                 String donorInfo = donor.name + '\n' + donor.contuctNumber;
                 donorList.add(donorInfo);
                 arrayAdapter.notifyDataSetChanged();

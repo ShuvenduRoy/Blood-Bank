@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Blood Bank</string>
+    <string name="title_activity_maps">Donors Locations</string>
 </resources>
