@@ -14,31 +14,38 @@
         android:text="Need Blood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:padding="10dp"
+        android:textSize="25dp"
+        android:textColor="@color/White"
+        android:background="@drawable/home_button"
+        android:id="@+id/btn_need_blood"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="41dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="40dp"
-        android:id="@+id/btn_need_blood" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Be a Donor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btn_need_blood"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="39dp"
-        android:layout_marginEnd="39dp"
-        android:id="@+id/btn_donor_profile" />
+        android:padding="10dp"
+        android:textSize="25dp"
+        android:textColor="@color/White"
+        android:background="@drawable/home_button"
+        android:id="@+id/btn_donor_profile"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/btn_need_blood"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Information"
+        android:text="Informations"
+        android:padding="10dp"
+        android:textSize="25dp"
+        android:textColor="@color/White"
+        android:background="@drawable/home_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="29dp"
-        android:id="@+id/btn_info" />
+        android:id="@+id/btn_info"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btn_donor_profile"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#009999</color>
-    <color name="colorPrimaryDark">#117cc9</color>
+    <color name="colorPrimary">#dd0000</color>
+    <color name="colorPrimaryDark">#aa0000</color>
+    <color name="colorAccent">#cc0000</color>
     <color name="lightSky">#0e96f9</color>
-    <color name="colorAccent">#FFcb2b</color>
+    <color name="appRed">#ee0000</color>
+    <color name="yellow">#FFcb2b</color>
     <color name="Black">#000000</color>
     <color name="primary_color">#4A312A</color>
     <color name="primary_dark_color">#2F1D1A</color><!-- Background color for app -->
@@ -12,7 +14,7 @@
     <color name="category_family">#379237</color><!-- Background color for the colors category -->
     <color name="category_colors">#8800A0</color><!-- Background color for the phrases category -->
     <color name="category_phrases">#00cc00</color>
-    <color name="skyBlue">#16AFCA</color>
+    <color name="blue">#16AFCA</color>
 
     <color name="LinkedInBlue">#0077B5</color>
     <color name="FBBlue">#3B5998</color>

@@ -60,7 +60,7 @@ public class DonorList extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Donor donor = dataSnapshot.getValue(Donor.class);
                 donorInfo.add(donor);
-                String donorInfo = donor.name + '\n' + donor.contuctNumber;
+                String donorInfo = donor.name + "   \n" + donor.contuctNumber;
                 donorList.add(donorInfo);
                 arrayAdapter.notifyDataSetChanged();
             }
