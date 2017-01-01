@@ -1,5 +1,6 @@
 package com.bikash.bloodbank;
 
+import android.renderscript.Double2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,8 +55,10 @@ public class DonorForm extends AppCompatActivity {
                 String city = cityChoice.getSelectedItem().toString();
                 String group = groupChoice.getSelectedItem().toString();
                 String mobile = Mobile.getText().toString();
+                String lat = MainActivity.lat.toString();
+                String lng = MainActivity.lng.toString();
 
-                Donor donor = new Donor(name,mobile,group,city);
+                Donor donor = new Donor(name,mobile,group,city,lat, lng);
                 DatabaseReference myRef = database.getReference("donors");
                 myRef.child(city).child(group).push().setValue(donor);
 
