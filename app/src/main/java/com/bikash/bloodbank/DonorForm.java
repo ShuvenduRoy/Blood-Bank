@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DatabaseReference;
@@ -20,6 +21,8 @@ public class DonorForm extends AppCompatActivity {
     EditText Mobile;
 
     Button Save;
+
+    ProgressBar progressBar;
 
 
 
@@ -42,7 +45,6 @@ public class DonorForm extends AppCompatActivity {
 
         Name = (EditText) findViewById(R.id.edt_name);
         Mobile = (EditText) findViewById(R.id.edt_mobileNumber);
-
         Save = (Button) findViewById(R.id.btn_saveDonor);
 
         Save.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +58,8 @@ public class DonorForm extends AppCompatActivity {
                 Donor donor = new Donor(name,mobile,group,city);
                 DatabaseReference myRef = database.getReference("donors");
                 myRef.child(city).child(group).push().setValue(donor);
+
+                finish();
             }
         });
 

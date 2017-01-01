@@ -27,7 +27,6 @@
     </LinearLayout>
 
 
-
     <LinearLayout
         android:layout_marginTop="100dp"
         android:orientation="vertical"
@@ -48,6 +47,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
+
             <EditText
                 android:background="@drawable/input_background"
                 android:padding="5dp"

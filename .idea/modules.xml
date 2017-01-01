@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BloodBank.iml" filepath="$PROJECT_DIR$/BloodBank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Blood-Bank.iml" filepath="$PROJECT_DIR$/Blood-Bank.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
