@@ -34,7 +34,7 @@ public class DonorForm extends AppCompatActivity {
 
         cityChoice = (Spinner) findViewById(R.id.dropdownCity);
 
-        String[] citis = new String[]{"Khulna", "Dhaka", "Chittagong"};
+        String[] citis = new String[]{"Barisal","Chittagong", "Dhaka", "Mymensingh","Khulna", "Rajshahi", "Rangpur", "Sylhet"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, citis);
         cityChoice.setAdapter(adapter);
 
