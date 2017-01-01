@@ -1,9 +1,12 @@
 package com.bikash.bloodbank;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -22,6 +25,7 @@ public class DonorList extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<String> arrayAdapter;
     public static ArrayList<Donor> donorInfo;
+    Button buttonMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,13 @@ public class DonorList extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, donorList);
         listView.setAdapter(arrayAdapter);
 
+        buttonMap = (Button) findViewById(R.id.Button_mapShow);
+        buttonMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DonorList.this, MapsActivity.class));
+            }
+        });
 
 
 

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     Button buttonDonor;
     Button buttonInfo;
     Button needBlood;
-    Button buttonMap;
+
     public static String donorId="no";
     SharedPreferences sharedPreferences;
 
@@ -56,13 +56,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         /**
          * Wiring up every thing
          */
-        buttonMap = (Button) findViewById(R.id.Button_mapShow);
-        buttonMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MapsActivity.class));
-            }
-        });
+
 
         buttonInfo = (Button) findViewById(R.id.btn_info);
         buttonInfo.setOnClickListener(new View.OnClickListener() {

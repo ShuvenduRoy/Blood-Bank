@@ -38,23 +38,9 @@ import java.util.Map;
 
 import static android.location.LocationManager.GPS_PROVIDER;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    public static GoogleMap mMap;
-    public static int n = 10;
-    public static Map<String, Coordinate> locationsMap;
-
-    GoogleApiClient mGoogleApiClient;
-    LocationManager locationManager;
-    LocationListener locationListener;
-    public static LatLng currentLocation;
-    public static MarkerOptions currentMurker;
-    int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
-    public static ArrayList<LatLng> Locations;
-    public static ArrayList<MarkerOptions> LocationMarkers;
-    public static ArrayList<Coordinate> BusArray;
-    public static ArrayList<String> buses;
-
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,98 +50,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        locationsMap = new HashMap<>();
-        currentLocation = new LatLng(22.89701915346086, 89.50657311826944);
-        currentMurker = new MarkerOptions().position(currentLocation).title("Your Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
-        BusArray = new ArrayList<>();
-
-
-
-
-        /**
-         * Getting current location
-         */
-        if (mGoogleApiClient == null) {
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addConnectionCallbacks((GoogleApiClient.ConnectionCallbacks) MapsActivity.this)
-                    .addOnConnectionFailedListener((GoogleApiClient.OnConnectionFailedListener) this)
-                    .addApi(LocationServices.API)
-                    .build();
-        }
-
-        locationListener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                Double lat = location.getLatitude();
-                Double lng = location.getLongitude();
-
-                currentLocation = new LatLng(lat, lng);
-                currentMurker = new MarkerOptions().position(currentLocation).title("Your Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
-
-                Log.i("LOCATION4", String.valueOf(lat));
-                Log.i("LOCATION5", String.valueOf(lng));
-                locationUpdate();
-
-            }
-
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-
-            }
-
-            @Override
-            public void onProviderEnabled(String provider) {
-
-            }
-
-            @Override
-            public void onProviderDisabled(String provider) {
-
-            }
-        };
-
-
-        for(int i=0; i<DonorList.donorInfo.size(); i++){
-            Donor donor = DonorList.donorInfo.get(i);
-            Double lat = new Double(donor.lat);
-            Double lng = new Double(donor.lan);
-            Coordinate coordinate = new Coordinate(lat,lng);
-            String donorName = donor.name+ " " + donor.contuctNumber;
-            locationsMap.put(donorName,coordinate);
-
-            LatLng l = new LatLng(coordinate.getLat(), coordinate.getLan());
-            MarkerOptions m = new MarkerOptions().position(l).title(donorName);
-            mMap.addMarker(m);
-        }
-
-
-
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-
-        if(!locationManager.isProviderEnabled(GPS_PROVIDER)){
-            Toast.makeText(MapsActivity.this, "Please Turn on Location", Toast.LENGTH_LONG).show();
-            Intent myIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-            MapsActivity.this.startActivity(myIntent);
-        }
-
-
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            /**
-             * Crating a location request
-             */
-
-
-
-            ActivityCompat.requestPermissions(MapsActivity.this,
-                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
-                    MY_PERMISSIONS_REQUEST_READ_CONTACTS);
-
-
-
-            return;
-        }
-        locationManager.requestLocationUpdates(GPS_PROVIDER, 1000, 1, locationListener);
-
     }
 
 
@@ -168,59 +62,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-
-    public static void locationUpdate(){
-        mMap.clear();
-
-        mMap.addMarker(currentMurker);
-
-
-        buses = new ArrayList<>();
-        for(int i=1; i<=n; i++){
-            String s = "Bus "+i;
-            buses.add(s);
-        }
-
-        Locations = new ArrayList<>();
-        LocationMarkers = new ArrayList<>();
-        for (int i=0; i<locationsMap.size(); i++){
-            Coordinate c = locationsMap.get(buses.get(i));
-            LatLng l = new LatLng(c.getLat(), c.getLan());
-            Locations.add(l);
-            MarkerOptions m = new MarkerOptions().position(l).title("Location"+i);
-            LocationMarkers.add(m);
-            Log.i("PUT", String.valueOf(i));
-
-        }
-
-        for(int i=0; i<LocationMarkers.size(); i++){
-            mMap.addMarker(LocationMarkers.get(i));
-        }
-    }
-
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        mMap.addMarker(currentMurker);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation,15));
+        LatLng you = new LatLng(MainActivity.lat, MainActivity.lng);
+        mMap.addMarker(new MarkerOptions().position(you).title("Your Position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.moveCamera( CameraUpdateFactory.newLatLngZoom(you , 15.0f) );
 
-    }
 
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
+        for(int i=0; i<DonorList.donorInfo.size(); i++){
+            Log.d("Donor", String.valueOf(i));
 
-    }
 
-    @Override
-    public void onConnectionSuspended(int i) {
+            Donor donor = DonorList.donorInfo.get(i);
+            Double lat = new Double(donor.lat);
+            Double lng = new Double(donor.lan);
 
-    }
+            Log.d("Donor", donor.lat);
+            Log.d("Donor", donor.lan);
 
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+            LatLng donar = new LatLng(lat, lng);
+            String donorName = donor.name+ " " + donor.contuctNumber;
+            mMap.addMarker(new MarkerOptions().position(donar).title(donorName));
+        }
     }
 }
