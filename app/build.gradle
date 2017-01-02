@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
+
+
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'
         exclude 'META-INF/LICENSE.txt'
@@ -29,6 +31,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "2.6"
+        multiDexEnabled  true
     }
     buildTypes {
         release {

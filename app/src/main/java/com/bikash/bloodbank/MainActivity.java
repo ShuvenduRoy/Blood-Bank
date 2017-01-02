@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public static String donorId="no";
     SharedPreferences sharedPreferences;
 
-    public static Double lat;
-    public static Double lng;
+    public static Double lat=0.0;
+    public static Double lng=0.0;
 
     private final int MY_PERMISSIONS_REQUEST_READ_CONTACTS=1;
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         buttonInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Info.class));
+                startActivity(new Intent(MainActivity.this, Information.class));
             }
         });
 
