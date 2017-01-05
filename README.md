@@ -26,6 +26,11 @@ And finally he will get a list of donors as follow
   <img src="https://github.com/Bikash300895/Blood-Bank/blob/master/ScreenShoot/4.png" width="250"/>
 </p>
 
+You can find the donors in map. The green dot in the map is your position and the red dots the the donors.
+<p align="center">
+  <img src="https://github.com/Bikash300895/Blood-Bank/blob/master/ScreenShoot/5.png" width="250"/>
+</p>
+
 You can also learn about why you should donote blood, and why it is beneficial for you to donote. And ofcourse you may need blood any time you don't know. So, stay connected with the community.
 
 
