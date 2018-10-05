@@ -15,8 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import static com.bikash.bloodbank.MainActivity.database;
 
 public class DonorForm extends AppCompatActivity {
-    Spinner cityChoice;
-    Spinner groupChoice;
+    Spinner cityChoice, groupChoice;
 
     EditText Name;
     EditText Mobile;
